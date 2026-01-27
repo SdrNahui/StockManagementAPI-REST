@@ -6,11 +6,9 @@ import com.miEmpresa.StockEstandar.Model.StockMovement;
 import com.miEmpresa.StockEstandar.Model.TypeStock;
 import com.miEmpresa.StockEstandar.Repository.ProductRepository;
 import com.miEmpresa.StockEstandar.Repository.StockRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +33,6 @@ public class ProductService {
             stockRepository.save(initial);
         }
         return p1;
-
     }
 
     public List<Product> getAllProduct(){
@@ -65,5 +62,4 @@ public class ProductService {
         productRepository.deleteById(id);
         return true;
     }
-
 }
