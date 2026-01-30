@@ -151,15 +151,6 @@ Este proyecto está pensado para ejecutarse en un entorno de desarrollo (IDE).
 
 ---
 
-## Estado del proyecto
-
-* Funcional
-* Persistente
-* Probado con Postman
-* Versión: **v1.0**
-
----
-
 ## Conceptos aplicados
 
 - Arquitectura MVC
@@ -180,6 +171,15 @@ Este proyecto está pensado para ejecutarse en un entorno de desarrollo (IDE).
 - Relaciones entre entidades
 - Manejo de excepciones personalizadas
 - Manejo global de excepciones
+
+---
+
+## Estado del proyecto
+
+* Funcional
+* Persistente
+* Probado con Postman
+* Versión: **v1.0**
 
 ---
 
