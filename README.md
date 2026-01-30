@@ -1,14 +1,14 @@
-# TaskManager API REST
+# StockManagement API REST
 
-Proyecto personal y autodidacta de **API REST** desarrollado con **Spring Boot**, orientado a la gestión de tareas.
+Proyecto personal y autodidacta de **API REST** desarrollado con **Spring Boot**, orientado a la gestión de stock.
 
-El objetivo principal es practicar el desarrollo backend con Java, entendiendo cómo interactúan una API, la persistencia de datos y las herramientas del ecosistema Spring.
-Permite gestionar tareas pendientes con endpoints CRUD.
+El objetivo principal es practicar el desarrollo backend con Java, profundizando cómo interactúan una API, la persistencia de datos y las herramientas del ecosistema Spring.
+Permite gestionar un stock con endpoints CRUD.
 ---
 
 ## Objetivo del proyecto
 
-* Comprender qué es y cómo funciona una **API REST**
+* Profundizar qué es y cómo funciona una **API REST**
 * Aprender el flujo completo **Controller → Service → Repository**
 * Implementar **persistencia con base de datos relacional**
 * Utilizar **Spring Boot + Spring Data JPA**
@@ -53,23 +53,43 @@ Arquitectura en capas (Controller -> Service -> Repository -> Model) siguiendo b
 
 * Entidades mapeadas a la base de datos:
   
-#### Task
+#### Product
 - id
 - name
 - description
-- completed
+- stockActual
+- price
+
+#### StockMovement
+- id
+- stockMovementType
+- amount
+- date
+- reason
 
 ---
 
 ## Endpoints principales
 
-| Método | Endpoint          | Descripción                  |
-|--------|-------------------|------------------------------|
-| GET    | /api/tasks        | Obtener todas las tareas     |
-| GET    | /api/tasks/{id}   | Obtener tarea por ID         |
-| POST   | /api/tasks        | Crear nueva tarea            |
-| PUT    | /api/tasks/{id}   | Actualizar una tarea         |
-| DELETE | /api/tasks/{id}   | Eliminar una tarea           |
+### Productos
+
+| Método | Endpoint                | Descripción                                 |
+|--------|-------------------------|---------------------------------------------|
+| GET    | /api/products           | Obtener todas los productos                 |
+| GET    | /api/products/{id}      | Obtener productos por ID                    |
+| POST   | /api/products           | Crear nuevo producto                        |
+| PUT    | /api/products/{id}      | Actualizar un producto                      |
+| DELETE | /api/products/{id}      | Eliminar un producto                        |
+
+### Movimientos del stock
+
+| Método | Endpoint                | Descripción                                 |
+|--------|-------------------------|---------------------------------------------|
+| GET    | /api/stock              | Obtener todos los movimientos               |
+| GET    | /api/stock/product/{id} | Obtener todos los movimientos por producto  |
+| POST   | /api/stock/add          | añade un nuevo movimiento de entrada        |
+| POST   | /api/stock/remove       | añade un nuevo movimiento de salida         |
+| POST   | /api/stock/adjust       | ajusta la cantidad de stock de forma manual |
 
 ---
 
@@ -87,10 +107,14 @@ Arquitectura en capas (Controller -> Service -> Repository -> Model) siguiendo b
 * Pruebas manuales de la API realizadas con **Postman**
 * Verificación de:
 
-  * Creación de tareas
-  * Obtención de tareas
-  * Actualización
-  * Eliminación
+  * Creación de productos
+  * Obtención de productos
+  * Actualización de productos
+  * Eliminación de productos
+  * Creación de movimiento de entrada
+  * Creación de movimiento de salida
+  * Creación de movimiento de ajuste
+  * Obtención de movimientos
 
 ---
 
@@ -110,7 +134,7 @@ Este proyecto está pensado para ejecutarse en un entorno de desarrollo (IDE).
 1. Clonar el repositorio
 
    ```bash
-   git clone https://github.com/SdrNahui/TaskManagerAPI-REST.git
+   git clone https://github.com/SdrNahui/StockManagementAPI-REST.git
    ```
 
 2. Crear una base de datos MySQL local
@@ -142,18 +166,20 @@ Este proyecto está pensado para ejecutarse en un entorno de desarrollo (IDE).
 - Programación Orientada a Objetos
 - Lógica de negocio
 - Refactorización incremental
+- Base de datos relacional
 - Aprendizaje prueba y error
 
 ---
 
 ## Conceptos aprendidos
 
-- Qué es una API
-- Qué es REST
-- Qué es un Endpoint
-- Qué es Postman
-- Qué es Spring Boot
-- Qué es una base de datos relacional
+- Qué es un DTO
+- Qué es un Request y un Response
+- Qué es una respuesta HTTP
+- Qué es una Primary key y Foreign key
+- Relaciones entre entidades
+- Manejo de excepciones personalizadas
+- Manejo global de excepciones
 
 ---
 
